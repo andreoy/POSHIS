@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Login" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a1c50f0f-91ac-4bbf-b9c7-430c2c1f8b23">
+	<property name="ireport.zoom" value="2.2"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="date_bawah" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date_atas" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT tb_login.id_login AS ID, tb_user.name AS NAMA, strftime('%Y-%m-%d %H:%M:%S',tb_login.time_aktif) AS LOGIN,  strftime('%Y-%m-%d %H:%M:%S',tb_login.time_disaktif) AS LOGOUT FROM tb_login
+INNER JOIN tb_user on tb_user.id_user = tb_login.id_user
+WHERE  strftime('%Y-%m-%d',LOGIN) BETWEEN strftime('%Y-%m-%d',$P{date_bawah}) AND strftime('%Y-%m-%d',$P{date_atas})]]>
+	</queryString>
+	<field name="ID" class="java.lang.Object"/>
+	<field name="NAMA" class="java.lang.Object"/>
+	<field name="LOGIN" class="java.lang.Object"/>
+	<field name="LOGOUT" class="java.lang.Object"/>
+	<background>
+		<band height="50"/>
+	</background>
+	<title>
+		<band height="50"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="35" uuid="a2c65e3b-990a-4d35-bc97-98c5a59913f9"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[LAPORAN AKTIFITAS LOGIN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="80" height="20" uuid="2750b20a-7403-4743-acb7-70e6e578054c"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="0" width="196" height="20" uuid="cbbe150c-fe87-4c5d-96e5-6cee4aed17e9"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="138" height="20" uuid="273787ab-cd13-4f65-9de6-6f55d32cb921"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[LOGIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="141" height="20" uuid="de8901b5-3d56-4205-87d1-df6d06ba7e38"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[LOGOUT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="80" height="20" uuid="65613250-b45d-4ad0-8685-e8f49bba6be9"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[""+$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="1" width="196" height="20" uuid="203b2d21-fe52-4d20-908f-696845fec509"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[""+$F{NAMA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="1" width="138" height="20" uuid="f9c4348e-61ac-4f7a-a12a-2d785e3810be"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[""+$F{LOGIN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="1" width="141" height="20" uuid="03500805-c496-4122-83e8-c458b4b6a1c1"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[""+$F{LOGOUT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement x="-1" y="1" width="556" height="1" uuid="24fd2fd7-bfaf-49d5-bd68-d0f34ec028aa"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="50"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="50"/>
+	</lastPageFooter>
+	<summary>
+		<band height="50"/>
+	</summary>
+</jasperReport>

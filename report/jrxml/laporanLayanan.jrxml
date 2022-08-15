@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="laporanLayanan" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3baec615-3f2d-4caf-a842-5efc044e6102">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="1008"/>
+	<property name="ireport.y" value="522"/>
+	<subDataset name="dataset1" uuid="f7ab97d7-0e9e-4f96-a6ce-afd9d5ed870e"/>
+	<queryString>
+		<![CDATA[SELECT tb_layanan.layanan, tb_layanan.biaya, tb_layanan.keterangan, tb_kategori.kategori FROM tb_layanan INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_layanan.id_kategori;]]>
+	</queryString>
+	<field name="layanan" class="java.lang.Object"/>
+	<field name="biaya" class="java.lang.Object"/>
+	<field name="keterangan" class="java.lang.Object"/>
+	<field name="kategori" class="java.lang.Object"/>
+	<group name="kategori">
+		<groupExpression><![CDATA[$F{kategori}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField>
+					<reportElement x="2" y="0" width="211" height="20" uuid="c47dbfc8-b378-4d21-b978-f0039df9050d"/>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[""+$F{kategori}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="144" splitType="Stretch">
+			<staticText>
+				<reportElement x="147" y="124" width="301" height="20" uuid="b1119cab-54d3-495b-9a33-316160f3eaab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Rekap Data Layanan dan Produk]]></text>
+			</staticText>
+			<image scaleImage="FillFrame" hAlign="Center">
+				<reportElement x="19" y="5" width="79" height="53" uuid="b91a36ce-3050-42e7-bca1-83d24a44a292"/>
+				<imageExpression><![CDATA["/home/zainil/Documents/PROYEK ONLINE/Kasir/19 Juni 2016/RSCasier.V.21.06/src/images/logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="2" y="82" width="129" height="20" uuid="2a827163-a62e-4d3b-8738-07cf45733451"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JATINEGARA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="58" width="129" height="24" uuid="367e1fed-89ee-4054-8710-c9a554cbffa8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RS PREMIER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="56" width="249" height="17" uuid="82e364ec-dacd-4547-8761-528c3a4bac9f"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Tel : 62-21 2800888, Fax: 62-21 2800755]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="39" width="154" height="17" uuid="c8c607e5-bb3a-408f-9aaf-6792fcfc203f"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Jakarta 13310 - Indonesia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="407" y="5" width="147" height="17" uuid="03fad601-b16a-4283-b170-9561b36e364b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RS Premier Jatinegara]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="352" y="22" width="202" height="17" uuid="2fef6dc5-a5bc-4e81-9125-b8f9b0f51cf5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Jl. Raya Jatinegara Timur 85.A - 87]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="42" width="555" height="1" uuid="1dd3a505-e465-44f5-8a13-2f3f613817dc"/>
+			</line>
+			<line>
+				<reportElement x="0" y="44" width="555" height="1" uuid="0e006ce9-5b3c-44da-a616-91c9b6d835b4"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="21" width="147" height="20" uuid="f46b891e-072a-42fb-afa2-2b3c8f71e236"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kategori dan Layanan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="213" y="21" width="101" height="20" uuid="a893238c-500b-4459-9fc1-0e05d00a8e49"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="21" width="160" height="20" uuid="5d62a8e8-eec3-4fb0-817f-4eefeab6a7eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Keterangan]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="14" width="555" height="1" uuid="0ccf6702-786c-4fb5-88e9-27bd0076d255"/>
+			</line>
+			<line>
+				<reportElement x="0" y="12" width="555" height="1" uuid="814b9b8c-f482-4620-9b3f-4a76d131c089"/>
+			</line>
+			<line>
+				<reportElement x="147" y="0" width="301" height="1" uuid="323ac8dd-51b4-49fe-b872-e13f4deef143"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="7" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="35" y="1" width="176" height="20" uuid="a9b2a41a-b4d3-40df-a487-806430e11db7"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[""+$F{layanan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="246" y="1" width="148" height="20" uuid="f8203f96-3199-46a7-aa28-74026d31d63b"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[""+$F{biaya}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="1" width="161" height="20" uuid="8e3d8def-0376-4abd-b918-73cb447c9c7e"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[""+$F{keterangan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="211" y="1" width="31" height="20" uuid="e394d4e7-50e5-4269-8047-18e425120fbc"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Rp.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="1" width="25" height="20" uuid="affa8f8c-d953-4145-bd4f-bb23c4c8833f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="446" y="0" width="68" height="20" uuid="4b341dce-6108-46d9-9b3e-d8dce107931e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="514" y="0" width="40" height="20" uuid="160793d1-dd43-43c1-b8cf-8299b9b80bb7"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="-1" y="0" width="69" height="20" uuid="330609fb-4f69-44ae-88c3-948e63f2f016"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-1" y="-1" width="555" height="1" uuid="c32d6c34-0da2-4489-8f1f-92742d8c3e15"/>
+			</line>
+			<staticText>
+				<reportElement x="68" y="0" width="14" height="20" uuid="e490ae43-1f3f-45b6-855e-eeb086f4fed0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField pattern="HH.mm">
+				<reportElement x="82" y="0" width="100" height="20" uuid="2a602146-b119-4179-b3c6-bb4b0c5d7886"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

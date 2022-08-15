@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="laporanKamar" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="975d5215-48d9-4626-94da-7216983a76e9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM tb_ruangan;]]>
+	</queryString>
+	<field name="id_ruangan" class="java.lang.Object"/>
+	<field name="nama_ruang" class="java.lang.Object"/>
+	<field name="status" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="112" splitType="Stretch">
+			<staticText>
+				<reportElement x="408" y="6" width="147" height="17" uuid="717ff5a7-9339-4240-b782-d4516bdbff06"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RS Premier Jatinegara]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="83" width="129" height="20" uuid="cba48ff2-1815-4022-8451-36028ad361d8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JATINEGARA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="306" y="57" width="249" height="17" uuid="e44ec35b-d3aa-4218-a24e-fa4f363b0421"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Tel : 62-21 2800888, Fax: 62-21 2800755]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="59" width="129" height="24" uuid="89ef234c-0a92-4291-8aed-666c71948ea0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RS PREMIER]]></text>
+			</staticText>
+			<image scaleImage="FillFrame" hAlign="Center">
+				<reportElement x="20" y="6" width="79" height="53" uuid="df2fcff9-4d1e-476d-bd17-e60e86081ad4"/>
+				<imageExpression><![CDATA["/home/zainil/Documents/PROYEK ONLINE/Kasir/19 Juni 2016/RSCasier.V.21.06/src/images/logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="353" y="23" width="202" height="17" uuid="227aa754-992a-48b0-ba13-ba0a6aedecc1"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Jl. Raya Jatinegara Timur 85.A - 87]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="40" width="154" height="17" uuid="5f75ce5b-b8e2-4788-a13b-6448a49a96c6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Jakarta 13310 - Indonesia]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="163" y="0" width="229" height="20" uuid="cdb24f44-746a-4ea9-bd77-8d90dc645294"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Rekap Data Ruang]]></text>
+			</staticText>
+			<line>
+				<reportElement x="163" y="20" width="229" height="1" uuid="128b7ed4-82ab-4069-8b3c-c7bf1631a6d2"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="25" width="555" height="1" uuid="6686d911-f5aa-4d40-9de7-99530afd39ee"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="3" width="151" height="20" uuid="fb837b58-dcb0-42d4-8fa8-c6f9d953151e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID RUANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="3" width="404" height="20" uuid="1e3371e2-a61f-465b-a899-9d13d621f2e4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA RUANG]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="3" width="555" height="1" uuid="118e3fb8-6454-4741-8066-e93a49bfdc0c"/>
+			</line>
+			<line>
+				<reportElement x="0" y="27" width="555" height="1" uuid="6bb1388d-5fdf-44d4-a7c8-42f8e0d035b3"/>
+			</line>
+			<line>
+				<reportElement x="0" y="1" width="555" height="1" uuid="b24eb71d-7d9f-4817-a534-8f9bbe5d2791"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="4" width="151" height="20" uuid="3261f993-36c4-4407-808a-60b7e2a876e9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[""+$F{id_ruangan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="4" width="404" height="20" uuid="c8367ae7-eaaa-4c05-9e28-fa2dfe68a56f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[""+$F{nama_ruang}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="447" y="0" width="68" height="20" uuid="2aa90e03-5f7a-4d85-973a-c89aef6ceeaf"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm">
+				<reportElement x="83" y="0" width="100" height="20" uuid="b2138ae8-c486-4431-b3bb-98f28959ac4c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="69" y="0" width="14" height="20" uuid="275f694b-8444-4635-a226-1ae5a7d85bfe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="-1" width="555" height="1" uuid="c53d6240-d5ff-48cb-9245-519b303526e3"/>
+			</line>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="0" y="0" width="69" height="20" uuid="38cc73f3-5e6b-4946-9989-12832f447ea8"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20" uuid="1443e3e2-e1fe-4089-8587-791ad15ba91c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="kasir" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="24f898ec-ef31-4559-925f-e5700f3292a7">
+	<property name="ireport.zoom" value="1.9487171000000019"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="86"/>
+	<parameter name="buka" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tutup" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[Select tb_pembayaran.id_sesi as SESI, tb_kasir.kasir as KASIR,tb_sesi.saldo_awal as SALDO_AWAL,tb_sesi.saldo_akhir as SALDO_AKHIR,tb_pembayaran.jumlah as Jumlah ,tb_user.username AS Operator, tb_sesi.time_open_sesi AS BUKA, tb_sesi.time_close_sesi AS TUTUP
+
+ from tb_pembayaran
+
+INNER JOIN tb_user ON tb_user.id_user = tb_pembayaran.id_user
+
+INNER JOIN tb_sesi ON tb_sesi.id_sesi = tb_pembayaran.id_sesi
+
+INNER JOIN tb_kasir ON tb_kasir.id_kasir = tb_sesi.id_kasir
+
+WHERE  strftime('%Y-%m-%d',BUKA) >=  strftime('%Y-%m-%d',$P{buka}) AND strftime('%Y-%m-%d',TUTUP) <=  strftime('%Y-%m-%d',$P{tutup})
+
+ORDER BY KASIR]]>
+	</queryString>
+	<field name="SESI" class="java.lang.Object"/>
+	<field name="KASIR" class="java.lang.Object"/>
+	<field name="SALDO_AWAL" class="java.lang.Object"/>
+	<field name="SALDO_AKHIR" class="java.lang.Object"/>
+	<field name="Jumlah" class="java.lang.Object"/>
+	<field name="Operator" class="java.lang.Object"/>
+	<field name="BUKA" class="java.lang.Object"/>
+	<field name="TUTUP" class="java.lang.Object"/>
+	<variable name="Jumlah_1" class="java.lang.Integer" resetType="Group" resetGroup="Sesi" calculation="Sum">
+		<variableExpression><![CDATA[$F{Jumlah}]]></variableExpression>
+	</variable>
+	<variable name="SALDO_AWAL_1" class="java.lang.Integer" resetType="Group" resetGroup="Kasir" calculation="Sum">
+		<variableExpression><![CDATA[$F{SALDO_AWAL}]]></variableExpression>
+	</variable>
+	<variable name="variable1" class="java.lang.Integer" resetType="Group" resetGroup="Sesi">
+		<variableExpression><![CDATA[$V{Jumlah_1}+$F{SALDO_AWAL}]]></variableExpression>
+	</variable>
+	<variable name="variable2" class="java.lang.Integer" resetType="Group" resetGroup="Kasir" calculation="Sum">
+		<variableExpression><![CDATA[$V{variable1}]]></variableExpression>
+	</variable>
+	<group name="Kasir">
+		<groupExpression><![CDATA[$F{KASIR}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField>
+					<reportElement positionType="Float" x="47" y="0" width="66" height="20" uuid="4892f47c-25e1-42f4-b130-57a549251175"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[""+$F{KASIR}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="0" width="47" height="20" uuid="bf4a9519-96ab-4fb5-ab5f-8666e9897a27"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Kasir:]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="19" width="555" height="1" uuid="ea3cfe19-28e2-4e13-8db0-99c42a6442e3"/>
+					<graphicElement>
+						<pen lineStyle="Double"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="0" y="0" width="555" height="1" uuid="193d6f3a-d961-439d-878a-2fa6ce4ec198"/>
+					<graphicElement>
+						<pen lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="50"/>
+		</groupFooter>
+	</group>
+	<group name="Sesi">
+		<groupExpression><![CDATA[$F{SESI}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<staticText>
+					<reportElement x="412" y="20" width="68" height="20" uuid="1f2f5704-0ba1-40ec-bcd1-4ed9e4983584"/>
+					<text><![CDATA[Saldo Awal]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="34" y="0" width="65" height="20" uuid="53d6843e-f105-45b9-bb04-c1ff1d54be7e"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Buka:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="481" y="20" width="74" height="20" uuid="31b3cc2d-c02a-4c40-8fb4-97f9268e56bf"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[""+$F{SALDO_AWAL}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="99" y="0" width="124" height="20" uuid="1a22110e-768d-4f36-9b85-58ac1b30a600"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""+$F{BUKA}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="34" y="20" width="65" height="20" uuid="e2ac7ea5-f3f9-43cf-982a-f39329219c99"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Tutup:]]></text>
+				</staticText>
+				<textField>
+					<reportElement positionType="Float" x="99" y="20" width="124" height="20" uuid="8b3a1174-0d7f-41e6-a325-3eb4d6ec0e41"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""+$F{TUTUP}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="20">
+				<line>
+					<reportElement x="0" y="19" width="555" height="1" uuid="72d362be-a11f-476e-b2a7-c6c38cca28c7"/>
+				</line>
+				<staticText>
+					<reportElement x="413" y="0" width="68" height="20" uuid="5be250b6-b743-443a-b272-5ec227f90ec6"/>
+					<text><![CDATA[Saldo Akhir]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="480" y="0" width="75" height="20" uuid="d90ada58-f2d9-484a-90c9-08be8e60255c"/>
+					<textElement textAlignment="Right">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{variable1}+0.0]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="Operator">
+		<groupExpression><![CDATA[$F{Operator}]]></groupExpression>
+		<groupHeader>
+			<band height="21">
+				<textField>
+					<reportElement positionType="Float" x="99" y="1" width="100" height="20" uuid="53a51861-61a9-48aa-ab31-353606f5c299"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""+$F{Operator}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="34" y="1" width="65" height="20" uuid="f0f2bff2-7b1a-481f-8353-bea4f794c1c0"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Operator:]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="50">
+			<staticText>
+				<reportElement x="0" y="10" width="555" height="20" uuid="f9b80bf2-1748-4698-9849-c2248c60e59c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Daftar Buka Tutup Kasir]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="480" y="0" width="75" height="20" uuid="4e8c1568-ee53-499d-a128-9573dacdc238"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[""+$F{Jumlah}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+</jasperReport>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="laporanPasien" language="groovy" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5bc44c6c-369e-4214-beaa-25346f308aed">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM tb_pasien ORDER BY name;]]>
+	</queryString>
+	<field name="id_pasien" class="java.lang.Object"/>
+	<field name="name" class="java.lang.Object"/>
+	<field name="jenkel" class="java.lang.Object"/>
+	<field name="tmpt_lahir" class="java.lang.Object"/>
+	<field name="alamat" class="java.lang.Object"/>
+	<field name="tgl_lahir" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="106" splitType="Stretch">
+			<staticText>
+				<reportElement x="413" y="0" width="147" height="17" uuid="c51661b3-17f8-48cb-bd07-9f78e2a935bb"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RS Premier Jatinegara]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="77" width="129" height="20" uuid="ee3685db-ed83-4336-9ebf-03fcda98d9b6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JATINEGARA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="51" width="249" height="17" uuid="aa599b0c-6692-4309-9eb2-543bf8fc0161"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Tel : 62-21 2800888, Fax: 62-21 2800755]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="53" width="129" height="24" uuid="ed7e99a5-8389-45d4-a7f5-a57dc5bb1f83"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RS PREMIER]]></text>
+			</staticText>
+			<image scaleImage="FillFrame" hAlign="Center">
+				<reportElement x="25" y="0" width="79" height="53" uuid="32997660-f12d-4001-aba2-ba0449416952"/>
+				<imageExpression><![CDATA["/home/zainil/Documents/PROYEK ONLINE/Kasir/19 Juni 2016/RSCasier.V.21.06/src/images/logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="358" y="17" width="202" height="17" uuid="25405199-567c-46ee-ac72-5602ecdd69f1"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Jl. Raya Jatinegara Timur 85.A - 87]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="406" y="34" width="154" height="17" uuid="e0057364-372e-4abe-aeb0-641c8163c002"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Jakarta 13310 - Indonesia]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="171" y="0" width="229" height="20" uuid="1f1925be-820f-41c6-ba0f-1a884f2f3fa3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Rekap Data Pasien]]></text>
+			</staticText>
+			<line>
+				<reportElement x="171" y="20" width="229" height="1" uuid="4f43da7c-9c8b-401a-b2dc-13e7be5891d8"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="26" width="572" height="1" uuid="655df582-fd46-4928-b92e-3227037382a8"/>
+			</line>
+			<line>
+				<reportElement x="0" y="2" width="572" height="1" uuid="1ea8765b-c6a6-4046-96c1-665e2712f845"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="2" width="82" height="20" uuid="1ef9c9f9-dfce-46f7-b58f-8abbf9f82c39"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID PASIEN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="2" width="96" height="20" uuid="17fe0045-13d4-46f5-a271-ab40c829f36e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="181" y="2" width="100" height="20" uuid="23505b8a-98db-4496-9fd1-84f49158e7f1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JENIS KELAMIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="2" width="100" height="20" uuid="a12867d2-b202-4aee-8c61-4c664b5ade08"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TEMPAT LAHIR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="2" width="100" height="20" uuid="32c1a884-2f89-4a33-a594-b48279420f70"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TANGGAL LAHIR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="486" y="2" width="72" height="20" uuid="c370c611-7575-4719-8dfd-2277aba7e80a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="24" width="572" height="1" uuid="d474a869-846a-43ee-ace3-9dbf4572b382"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="572" height="1" uuid="c24ccb4c-0bf9-498e-b3ab-e08193f9c7c6"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="5" width="82" height="20" uuid="96fcf414-7b0d-4ac3-9440-adb6e686ca5f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{id_pasien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="82" y="5" width="118" height="20" uuid="2c22191e-ea75-41d1-b733-68f453431fe3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[""+$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="5" width="100" height="20" uuid="bb2ebd99-169c-4658-9043-7ed0eff6dc2a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[""+$F{jenkel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="5" width="100" height="20" uuid="829cb9a8-a00d-41bd-b2a2-333a56f0e2ca"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[""+$F{tmpt_lahir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="5" width="100" height="20" uuid="a3a01c54-c4ad-4888-8903-643780ef8979"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[""+$F{tgl_lahir}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="500" y="5" width="72" height="20" uuid="12582e06-1431-4447-97c2-b27a2e22a3d7"/>
+				<textElement verticalAlignment="Middle" rotation="None">
+					<font isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{alamat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="464" y="4" width="68" height="20" uuid="97cd7b4e-bafc-4b40-ae84-b04239518c44"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="532" y="4" width="40" height="20" uuid="ea994354-0576-45ad-82f9-15e6d52262e7"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="3" y="4" width="69" height="20" uuid="701b63c7-17a1-495f-86ee-f8f85fefde01"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="3" width="572" height="1" uuid="cb625a23-40fd-4209-abfb-27e4870aed28"/>
+			</line>
+			<staticText>
+				<reportElement x="72" y="4" width="14" height="20" uuid="00840181-65d4-4b29-9ad1-e46ff1e854f6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField pattern="HH.mm">
+				<reportElement x="86" y="4" width="100" height="20" uuid="d62bb5a5-fb0d-4ed8-9465-4a938917e988"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

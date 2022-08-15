@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="kwitansi" language="groovy" pageWidth="595" pageHeight="432" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" uuid="a505f994-bfb6-4948-a6bc-bb4151bfabbc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="74"/>
+	<style name="Heading" fontSize="14"/>
+	<parameter name="id_cekin" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="text_jumlah_uang" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="text_untuk_pembayaran" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="diterima_dari" class="java.lang.String"/>
+	<parameter name="total_bayar" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select tb_cekin.id_checkin AS ID, tb_pasien.name AS NAMA, (
+
+Select Sum(tb_layanan.biaya*tb_transaksi.jumlah)from tb_transaksi
+INNER JOIN tb_layanan ON tb_layanan.id_layanan = tb_transaksi.id_layanan
+WHERE tb_transaksi.id_checkin = $P{id_cekin})  AS TOTAL
+
+FROM tb_cekin
+
+INNER JOIN tb_pasien ON tb_pasien.id_pasien = tb_cekin.id_pasien
+
+WHERE ID = $P{id_cekin}]]>
+	</queryString>
+	<field name="ID" class="java.lang.Object"/>
+	<field name="NAMA" class="java.lang.Object"/>
+	<field name="TOTAL" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="138" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="85" width="171" height="24" uuid="40da88a3-e7d7-4b7c-8acc-dbd39f73b3c7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RS PREMIER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="109" width="171" height="20" uuid="600d54a0-02b1-4ded-8e72-ce2f7213fe7a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JATINEGARA]]></text>
+			</staticText>
+			<image scaleImage="FillFrame" hAlign="Center">
+				<reportElement x="30" y="5" width="111" height="74" uuid="c55c315f-d200-424e-bf36-1531cdf73b41"/>
+				<imageExpression><![CDATA["images/logo.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="137" width="539" height="1" uuid="b02cefc2-f298-4ab2-a58d-689c6ab46190"/>
+			</line>
+			<textField>
+				<reportElement x="421" y="5" width="100" height="20" uuid="8a47f491-3274-49a9-b25a-68024c1876e1"/>
+				<textFieldExpression><![CDATA[""+$F{ID}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="171" y="0" width="189" height="20" uuid="142a3876-972f-48b2-9ce1-6d895e971248"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KWITANSI]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="1" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="1" width="171" height="20" uuid="13348ff6-0c18-4185-ad97-1bc535074e8d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Sudah terima dari		:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="28" width="171" height="20" uuid="63a3e7ed-4eae-41a4-838d-7636584b7771"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Banyaknya Uang		:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="54" width="171" height="20" uuid="9e2ce0e2-1f57-4d75-8193-3f22d24b03bc"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Untuk Pembayaran		:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="83" width="171" height="20" uuid="840af5ce-921c-4795-9d18-a795da867ebb"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Jumlah Uang			:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="170" y="20" width="350" height="1" uuid="e16e1398-9729-457d-a4a1-44c32cef61cd"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="170" y="46" width="350" height="1" uuid="170c3ee1-b437-4f30-9b4f-06d512367695"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="171" y="74" width="350" height="1" uuid="a7f9eaaa-38b6-4300-b52f-3540ab8ba0da"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="171" y="102" width="350" height="1" uuid="1960eea3-edd9-42ed-b241-638341a9ed18"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="171" y="26" width="349" height="20" uuid="a185b84c-43cf-4228-b1e1-b78f9eb4937a"/>
+				<textFieldExpression><![CDATA[$P{text_jumlah_uang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="54" width="349" height="20" uuid="c1dfa24b-1375-4668-9dfc-f46b088c6cc4"/>
+				<textFieldExpression><![CDATA[$P{text_untuk_pembayaran}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="83" width="100" height="20" uuid="59c12124-e55c-43ab-a4f8-beac96986d75"/>
+				<textFieldExpression><![CDATA[$P{total_bayar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="1" width="100" height="20" uuid="71a8f0f1-8c16-40c7-8209-4f5332d9ddc2"/>
+				<textFieldExpression><![CDATA[$P{diterima_dari}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="105" splitType="Stretch">
+			<staticText>
+				<reportElement x="355" y="7" width="61" height="20" uuid="cc014d8a-f95c-4f0d-93ac-aa59d8ccce4b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="420" y="7" width="100" height="20" uuid="97837fb2-f0e0-4fb9-9c03-4e302303249d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="85" width="510" height="20" uuid="c1321983-869a-46e4-b027-3d79e7efd923"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Pembayaran dengan Transfer harap melalui HSBC WTC Sudirman Jakarta, A/C:8207-01-0030, An. PT. Affinity Heath Indonesia ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="2" width="539" height="1" uuid="89007e63-db3d-4902-9a01-48d7d33e349c"/>
+			</line>
+		</band>
+	</columnFooter>
+</jasperReport>

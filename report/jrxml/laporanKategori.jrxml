@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="laporanKategori" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="074a54c1-65a3-4baa-bf30-7f257e4d5f9c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id_kategori" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM tb_kategori;]]>
+	</queryString>
+	<field name="id_kategori" class="java.lang.Object"/>
+	<field name="kategori" class="java.lang.Object"/>
+	<field name="keterangan" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement x="408" y="0" width="147" height="17" uuid="dc6db036-b5cd-45e0-b249-d601f5744f1d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RS Premier Jatinegara]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="77" width="129" height="20" uuid="8a9d4f91-1825-4dbb-adee-9601eb9e7bbf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JATINEGARA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="306" y="51" width="249" height="17" uuid="f420adc2-01fd-4e6b-a467-d3a2eb477e0c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Tel : 62-21 2800888, Fax: 62-21 2800755]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="53" width="129" height="24" uuid="4e2693ae-0cf3-4320-b864-0f8406391bd9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RS PREMIER]]></text>
+			</staticText>
+			<image scaleImage="FillFrame" hAlign="Center">
+				<reportElement x="20" y="0" width="79" height="53" uuid="7ce9f1e4-f0f6-4614-95c2-b83059a38ea6"/>
+				<imageExpression><![CDATA["/home/zainil/Documents/PROYEK ONLINE/Kasir/19 Juni 2016/RSCasier.V.21.06/src/images/logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="353" y="17" width="202" height="17" uuid="e1ec3474-4790-416c-b0b3-8613035980e8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Jl. Raya Jatinegara Timur 85.A - 87]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="34" width="154" height="17" uuid="3d7dadff-240f-4078-ba9d-ef61d8d92e35"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Jakarta 13310 - Indonesia]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="145" y="0" width="229" height="20" uuid="6c41d526-b606-47a2-97b5-9d95f60ffa44"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Rekap Data Kategori]]></text>
+			</staticText>
+			<line>
+				<reportElement x="145" y="20" width="229" height="1" uuid="0e5cc81b-31b4-4fc7-972e-e7c8639691fa"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="145" y="2" width="240" height="32" uuid="3a39ef17-da9e-4148-be9e-c7ba7590d460"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KATEGORI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="2" width="145" height="32" uuid="9f798ba1-e635-4427-aeeb-e86e2b15d760"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID KATEGORI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="2" width="170" height="32" uuid="6132b2c5-039b-405e-8b77-2ee8ceeb2633"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KETERANGAN]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="38" width="555" height="1" uuid="ad8545c7-3cb3-4856-964b-24d7716d3426"/>
+			</line>
+			<line>
+				<reportElement x="0" y="36" width="555" height="1" uuid="ac45bf17-20e5-4c67-a66a-a2f72eb5d2da"/>
+			</line>
+			<line>
+				<reportElement x="0" y="2" width="555" height="1" uuid="5e001692-704b-472c-8164-f32a24f62b5c"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="be97e0ef-58b3-4faa-a6aa-bcdfffe86061"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="145" y="0" width="240" height="20" uuid="8a1da13e-3d1a-4237-b00e-6d29960358cc"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{kategori}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="145" height="20" uuid="3875f2d1-f265-4309-84b7-663551c44f82"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{id_kategori}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="385" y="0" width="170" height="20" uuid="062b62e4-9651-46da-b052-cb822400a382"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{keterangan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="447" y="2" width="68" height="20" uuid="36900fa9-d275-477f-b17c-2b746afed1a8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="2" width="40" height="20" uuid="250e8a3e-c13f-4332-ad5b-e979e470c6ac"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="0" y="2" width="69" height="20" uuid="c860e67d-95dd-463f-896d-7ee3d4103380"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm">
+				<reportElement x="83" y="2" width="100" height="20" uuid="85075ebe-f39f-4d3c-971c-3e84e045425f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="69" y="2" width="14" height="20" uuid="40983b96-15cb-4852-87a6-4cd5675c56ca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="1" width="555" height="1" uuid="fbf1d240-7489-4347-9412-77903d9ad52f"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
